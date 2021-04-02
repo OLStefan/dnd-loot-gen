@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dnd-loot-gen-react/static/css/main.5bc5b1ce.chunk.css",
+    "main.js": "/dnd-loot-gen-react/static/js/main.7aa346c4.chunk.js",
+    "main.js.map": "/dnd-loot-gen-react/static/js/main.7aa346c4.chunk.js.map",
+    "runtime-main.js": "/dnd-loot-gen-react/static/js/runtime-main.e02dd2ec.js",
+    "runtime-main.js.map": "/dnd-loot-gen-react/static/js/runtime-main.e02dd2ec.js.map",
+    "static/css/2.27175f2b.chunk.css": "/dnd-loot-gen-react/static/css/2.27175f2b.chunk.css",
+    "static/js/2.e15335aa.chunk.js": "/dnd-loot-gen-react/static/js/2.e15335aa.chunk.js",
+    "static/js/2.e15335aa.chunk.js.map": "/dnd-loot-gen-react/static/js/2.e15335aa.chunk.js.map",
+    "index.html": "/dnd-loot-gen-react/index.html",
+    "static/css/2.27175f2b.chunk.css.map": "/dnd-loot-gen-react/static/css/2.27175f2b.chunk.css.map",
+    "static/css/main.5bc5b1ce.chunk.css.map": "/dnd-loot-gen-react/static/css/main.5bc5b1ce.chunk.css.map",
+    "static/js/2.e15335aa.chunk.js.LICENSE.txt": "/dnd-loot-gen-react/static/js/2.e15335aa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e02dd2ec.js",
+    "static/css/2.27175f2b.chunk.css",
+    "static/js/2.e15335aa.chunk.js",
+    "static/css/main.5bc5b1ce.chunk.css",
+    "static/js/main.7aa346c4.chunk.js"
+  ]
+}
