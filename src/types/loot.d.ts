@@ -45,3 +45,8 @@ interface MagicItemLoot {
 	name: string;
 	count: number;
 }
+
+interface HoardLoot {
+	coins: [number, number, number, number, number];
+	magicItems: MagicItemLoot[];
+}

@@ -39,6 +39,7 @@ function getMagicItems(settings: CRSettings, hoardTable: HoardTable, magicItemTa
 				if (magicItemTable) {
 					const possibleItems = findEntriesInRange(magicItemTable, rollDice(100)).map((entry) => entry.name);
 					if (possibleItems.length > 1) {
+						// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 						currentItems = [...currentItems, shuffle(possibleItems)[0]!];
 					} else {
 						currentItems = [...currentItems, ...possibleItems];

@@ -20,12 +20,43 @@ import generateHoardLoot from './generateHoardLoot';
 
 function LootByCR({ ...otherProps }: BaseProps) {
 	const [settings, setSettings] = useState<CRSettings>({ low: 0, medium: 0, high: 0, end: 0 });
-	const [coins, setCoins] = useState<[number, number, number, number, number]>([0, 0, 0, 0, 0]);
-	const [magicItems, setMagicItems] = useState<MagicItemLoot[]>([]);
+	const [{ coins, magicItems }, setLoot] = useState<HoardLoot>({ coins: [0, 0, 0, 0, 0], magicItems: [] });
+	const [options, setOptions] = useState({ dmg: true, gsb: true });
+
+	const magicItemTables = [
+		[...(options.dmg ? tableA : []), ...(options.gsb ? griffonA : [])],
+		[...(options.dmg ? tableB : []), ...(options.gsb ? griffonB : [])],
+		[...(options.dmg ? tableC : []), ...(options.gsb ? griffonC : [])],
+		[...(options.dmg ? tableD : []), ...(options.gsb ? griffonD : [])],
+		[...(options.dmg ? tableE : []), ...(options.gsb ? griffonE : [])],
+		[...(options.dmg ? tableF : []), ...(options.gsb ? griffonF : [])],
+		[...(options.dmg ? tableG : []), ...(options.gsb ? griffonG : [])],
+		[...(options.dmg ? tableH : []), ...(options.gsb ? griffonH : [])],
+		[...(options.dmg ? tableI : []), ...(options.gsb ? griffonI : [])],
+	];
 
 	return (
 		<div {...otherProps}>
 			<CRSettings settings={settings} setSettings={setSettings} />
+
+			<div className="magic-tables-options">
+				<span>Magic Item Tables:</span>
+				<input
+					type="checkbox"
+					name="dmg"
+					checked={options.dmg}
+					onChange={() => setOptions((options) => ({ ...options, dmg: !options.dmg }))}
+				/>
+				<label htmlFor="dmg">Dungeon Master{"'"}s Guide</label>
+
+				<input
+					type="checkbox"
+					name="gsb"
+					checked={options.gsb}
+					onChange={() => setOptions((options) => ({ ...options, gsb: !options.gsb }))}
+				/>
+				<label htmlFor="gsb">Griffon{"'"}s Saddlebag</label>
+			</div>
 
 			<div className="loot-log">
 				<span>{`${coins[0]} CP, ${coins[1]} SP, ${coins[2]} EP, ${coins[3]} GP, ${coins[4]} PP`}</span>
@@ -39,23 +70,7 @@ function LootByCR({ ...otherProps }: BaseProps) {
 			</div>
 
 			<div className="button-container">
-				<button
-					type="button"
-					onClick={() => {
-						const loot = generateHoardLoot(settings, hoardTable, [
-							[...tableA, ...griffonA],
-							[...tableB, ...griffonB],
-							[...tableC, ...griffonC],
-							[...tableD, ...griffonD],
-							[...tableE, ...griffonE],
-							[...tableF, ...griffonF],
-							[...tableG, ...griffonG],
-							[...tableH, ...griffonH],
-							[...tableI, ...griffonI],
-						]);
-						setCoins(loot.coins);
-						setMagicItems(loot.magicItems);
-					}}>
+				<button type="button" onClick={() => setLoot(generateHoardLoot(settings, hoardTable, magicItemTables))}>
 					Generate Loot
 				</button>
 			</div>
@@ -77,11 +92,18 @@ export default styled(LootByCR)`
 		}
 	}
 
+	.magic-tables-options {
+		padding: var(--spacing-large);
+		display: flex;
+		grid-column: 1/3;
+	}
+
 	.loot-log {
 		padding: var(--spacing-medium);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		grid-area: 1/2/3;
 
 		.left {
 			align-self: flex-start;
