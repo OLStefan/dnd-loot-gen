@@ -1,13 +1,13 @@
 {
 	"name": "sr-rework-creator",
-	"homepage": "http://olstefan.github.io/dnd-loot-gen-react",
+	"homepage": "http://olstefan.github.io/dnd-loot-gen",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"develop": "yarn install && BROWSER=none react-scripts start",
 		"build": "react-scripts build",
 		"clean": "rimraf node_modules build",
-		"test": "react-scripts test --watchAll=false",
+		"test": "react-scripts test --watchAll=false --passWithNoTests",
 		"test:watch": "react-scripts test",
 		"check:types": "tsc --noEmit",
 		"check:style": "prettier --check .",
@@ -15,8 +15,8 @@
 		"check:all": "yarn check:types && yarn check:style && yarn check:linter && yarn test",
 		"prettier:fix": "prettier --write .",
 		"eject": "react-scripts eject",
-		"predeploy": "yarn build",
-		"deploy": "yarn lint && gh-pages -d build"
+		"predeploy": "yarn check:all && yarn build",
+		"deploy": "gh-pages -d build"
 	},
 	"browserslist": {
 		"production": [
@@ -61,6 +61,7 @@
 		"@types/sortablejs": "^1.10.6",
 		"@types/styled-components": "^5.1.7",
 		"@types/uuid": "^8.3.0",
+		"@typescript-eslint/eslint-plugin": "^4.20.0",
 		"@typescript-eslint/parser": "^4.20.0",
 		"eslint": "^7.22.0",
 		"eslint-config-prettier": "^8.1.0",
