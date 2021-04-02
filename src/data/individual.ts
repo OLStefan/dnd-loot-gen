@@ -22,9 +22,9 @@ const lootTable: LootTable = {
 		{ content: [0, 0, 0, '6d6', '1d6'], range: { min: 76, max: 100 } },
 	],
 	[Tiers.END]: [
-		{ content: [0, 0, '2d6x500', '8d6x50', 0], range: { min: 1, max: 15 } },
-		{ content: [0, 0, 0, '5d6x100', '3d6x10'], range: { min: 16, max: 55 } },
-		{ content: [0, 0, 0, '7d6x100', '4d6x10'], range: { min: 56, max: 100 } },
+		{ content: [0, 0, '2d6x1000', '8d6x100', 0], range: { min: 1, max: 15 } },
+		{ content: [0, 0, 0, '1d6x1000', '1d6x100'], range: { min: 16, max: 55 } },
+		{ content: [0, 0, 0, '1d6x1000', '2d6x100'], range: { min: 56, max: 100 } },
 	],
 };
 

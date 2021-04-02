@@ -2,6 +2,7 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import styled from 'styled-components';
 import HoardLoot from './loot/HoardLoot';
 import IndividualLoot from './loot/IndividualLoot';
+import RollMagicItemTable from './loot/RollMagicItemTable';
 import Statiscs from './loot/Statiscs';
 
 function App({ ...otherProps }: BaseProps) {
@@ -11,6 +12,7 @@ function App({ ...otherProps }: BaseProps) {
 				<TabList>
 					<Tab>Individual</Tab>
 					<Tab>Hoard</Tab>
+					<Tab>Roll Magic Items</Tab>
 					<Tab>Statistics</Tab>
 				</TabList>
 
@@ -19,6 +21,9 @@ function App({ ...otherProps }: BaseProps) {
 				</TabPanel>
 				<TabPanel>
 					<HoardLoot className="content" />
+				</TabPanel>
+				<TabPanel>
+					<RollMagicItemTable className="content" />
 				</TabPanel>
 				<TabPanel>
 					<Statiscs className="content" />

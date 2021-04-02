@@ -6,7 +6,7 @@ import toGold from '../util/toGold';
 import CRSettings from './CRSettings';
 import generateLoot from './generateIndividualLoot';
 
-function LootByCR({ ...otherProps }: BaseProps) {
+function IndividualLoot({ ...otherProps }: BaseProps) {
 	const [settings, setSettings] = useState<CRSettings>({ low: 0, medium: 0, high: 0, end: 0 });
 	const [coins, setCoins] = useState<[number, number, number, number, number]>([0, 0, 0, 0, 0]);
 
@@ -26,7 +26,7 @@ function LootByCR({ ...otherProps }: BaseProps) {
 	);
 }
 
-export default styled(LootByCR)`
+export default styled(IndividualLoot)`
 	display: grid;
 	grid-template-columns: 50% 50%;
 

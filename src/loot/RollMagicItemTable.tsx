@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import hoardTable from '../data/hoard';
 import {
 	tableA as griffonA,
 	tableB as griffonB,
@@ -13,14 +12,13 @@ import {
 	tableI as griffonI,
 } from '../data/magicItemTables/griffonsSaddleBag';
 import { tableA, tableB, tableC, tableD, tableE, tableF, tableG, tableH, tableI } from '../data/magicItemTables/wotc';
-import roundToDecimals from '../util/roundToDecimals';
-import toGold from '../util/toGold';
-import CRSettings from './CRSettings';
-import generateHoardLoot from './generateHoardLoot';
+import rollMagicItemTable from './rollMagicItemTable';
 
-function HoardLoot({ ...otherProps }: BaseProps) {
-	const [settings, setSettings] = useState<CRSettings>({ low: 0, medium: 0, high: 0, end: 0 });
-	const [{ coins, magicItems }, setLoot] = useState<HoardLoot>({ coins: [0, 0, 0, 0, 0], magicItems: [] });
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+
+function RollMagicItemTable({ ...otherProps }: BaseProps) {
+	const [settings, setSettings] = useState<number[]>([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+	const [magicItems, setmagicItems] = useState<MagicItemLoot[]>([]);
 	const [options, setOptions] = useState({ dmg: true, gsb: true });
 
 	const magicItemTables = [
@@ -37,7 +35,29 @@ function HoardLoot({ ...otherProps }: BaseProps) {
 
 	return (
 		<div {...otherProps}>
-			<CRSettings settings={settings} setSettings={setSettings} />
+			<div className="roll-settings">
+				{magicItemTables.map((_, index) => (
+					<div className="table-setting" key={index}>
+						<label>Table {alphabet[index]}</label>
+						<input
+							type="number"
+							value={settings[index]}
+							onFocus={(event) => event.target.select()}
+							onChange={(e) =>
+								setSettings((old) => {
+									const newSettings = [...old];
+									let newValue = parseInt(e.target.value);
+									if (Number.isNaN(newValue)) {
+										newValue = 0;
+									}
+									newSettings[index] = Math.max(newValue, 0);
+									return newSettings;
+								})
+							}
+						/>
+					</div>
+				))}
+			</div>
 
 			<div className="magic-tables-options">
 				<span>Magic Item Tables:</span>
@@ -59,8 +79,6 @@ function HoardLoot({ ...otherProps }: BaseProps) {
 			</div>
 
 			<div className="loot-log">
-				<span>{`${coins[0]} CP, ${coins[1]} SP, ${coins[2]} EP, ${coins[3]} GP, ${coins[4]} PP`}</span>
-				<span>Worth: {roundToDecimals(toGold(coins), 2)} GP</span>
 				<span className="left">Magic items:</span>
 				<ul>
 					{magicItems.map((item) => (
@@ -70,7 +88,7 @@ function HoardLoot({ ...otherProps }: BaseProps) {
 			</div>
 
 			<div className="button-container">
-				<button type="button" onClick={() => setLoot(generateHoardLoot(settings, hoardTable, magicItemTables))}>
+				<button type="button" onClick={() => setmagicItems(rollMagicItemTable(settings, magicItemTables))}>
 					Generate Loot
 				</button>
 			</div>
@@ -78,9 +96,22 @@ function HoardLoot({ ...otherProps }: BaseProps) {
 	);
 }
 
-export default styled(HoardLoot)`
+export default styled(RollMagicItemTable)`
 	display: grid;
 	grid-template-columns: 50% 50%;
+
+	.roll-settings {
+		display: grid;
+		grid-template-columns: 10em 1fr;
+
+		.table-setting {
+			display: contents;
+
+			label {
+				padding: var(--spacing-large);
+			}
+		}
+	}
 
 	.button-container {
 		grid-column: 1/3;

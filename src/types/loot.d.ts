@@ -41,12 +41,13 @@ type MagicItemTable = MagicItem[];
 
 type HoardTable = Record<Tiers, HoardTableEntry>;
 
+type CoinLoot = [number, number, number, number, number];
 interface MagicItemLoot {
 	name: string;
 	count: number;
 }
 
 interface HoardLoot {
-	coins: [number, number, number, number, number];
+	coins: CoinLoot;
 	magicItems: MagicItemLoot[];
 }

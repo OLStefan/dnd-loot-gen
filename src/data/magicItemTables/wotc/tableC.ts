@@ -8,7 +8,7 @@ const table: MagicItemTable = [
 	{ name: 'Potion of frost giant strength', range: { min: 43, max: 47 } },
 	{ name: 'Potion of stone giant strength', range: { min: 48, max: 52 } },
 	{ name: 'Potion of heroism', range: { min: 53, max: 57 } },
-	{ name: 'Potion of in vu lnerabil it y', range: { min: 58, max: 62 } },
+	{ name: 'Potion of invulnerability', range: { min: 58, max: 62 } },
 	{ name: 'Potion of mind reading', range: { min: 63, max: 67 } },
 	{ name: 'Spell scroll (5th level)', range: { min: 68, max: 72 } },
 	{ name: 'Elixir of health', range: { min: 73, max: 75 } },
