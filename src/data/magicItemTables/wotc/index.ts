@@ -1,0 +1,9 @@
+export { default as tableA } from './tableA';
+export { default as tableB } from './tableB';
+export { default as tableC } from './tableC';
+export { default as tableD } from './tableD';
+export { default as tableE } from './tableE';
+export { default as tableF } from './tableF';
+export { default as tableG } from './tableG';
+export { default as tableH } from './tableH';
+export { default as tableI } from './tableI';

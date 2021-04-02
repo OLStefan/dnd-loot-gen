@@ -1,5 +1,6 @@
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import styled from 'styled-components';
+import HoardLoot from './loot/HoardLoot';
 import IndividualLoot from './loot/IndividualLoot';
 import Statiscs from './loot/Statiscs';
 
@@ -17,7 +18,7 @@ function App({ ...otherProps }: BaseProps) {
 					<IndividualLoot className="content" />
 				</TabPanel>
 				<TabPanel>
-					<IndividualLoot className="content" />
+					<HoardLoot className="content" />
 				</TabPanel>
 				<TabPanel>
 					<Statiscs className="content" />

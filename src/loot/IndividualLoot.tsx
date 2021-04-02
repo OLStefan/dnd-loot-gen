@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import lootTable from '../data/individual';
+import roundToDecimals from '../util/roundToDecimals';
+import toGold from '../util/toGold';
 import CRSettings from './CRSettings';
 import generateLoot from './generateIndividualLoot';
 
@@ -12,7 +14,10 @@ function LootByCR({ ...otherProps }: BaseProps) {
 		<div {...otherProps}>
 			<CRSettings settings={settings} setSettings={setSettings} />
 
-			<div className="loot-log">{`${coins[0]} CP, ${coins[1]} SP, ${coins[2]} EP, ${coins[3]} GP, ${coins[4]} PP`}</div>
+			<div className="loot-log">
+				<span>{`${coins[0]} CP, ${coins[1]} SP, ${coins[2]} EP, ${coins[3]} GP, ${coins[4]} PP`}</span>
+				<span>Worth: {roundToDecimals(toGold(coins), 2)} GP</span>
+			</div>
 
 			<div className="button-container">
 				<button type="button" onClick={() => setCoins(generateLoot(settings, lootTable))}>
@@ -39,5 +44,8 @@ export default styled(LootByCR)`
 
 	.loot-log {
 		padding: var(--spacing-medium);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 `;

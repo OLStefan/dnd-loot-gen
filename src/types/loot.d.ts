@@ -9,10 +9,12 @@ type CoinString = DiceString | MultipliedDiceString | 0;
 type CoinTuple = [CoinString, CoinString, CoinString, CoinString, CoinString];
 
 interface TableEntry {
-	range: {
-		min: number;
-		max: number;
-	};
+	range:
+		| {
+				min: number;
+				max: number;
+		  }
+		| { exactly: number };
 }
 
 interface LootTableEntry extends TableEntry {
@@ -38,3 +40,8 @@ interface MagicItem extends TableEntry {
 type MagicItemTable = MagicItem[];
 
 type HoardTable = Record<Tiers, HoardTableEntry>;
+
+interface MagicItemLoot {
+	name: string;
+	count: number;
+}

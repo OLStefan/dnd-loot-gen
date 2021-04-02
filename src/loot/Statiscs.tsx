@@ -7,6 +7,7 @@ import { Tiers } from '../types/enums';
 import roundToDecimals from '../util/roundToDecimals';
 import generateHoardLoot from './generateHoardLoot';
 import generateIndividual from './generateIndividualLoot';
+import toGold from '../util/toGold';
 
 const REPITITIONS = 1000000;
 const baseSettings: CRSettings = { [Tiers.LOW]: 0, [Tiers.MEDIUM]: 0, [Tiers.HIGH]: 0, [Tiers.END]: 0 };
@@ -37,7 +38,7 @@ function LootByCR({ ...otherProps }: BaseProps) {
 					);
 				})}
 			</div>
-			{/* <div className="orig-individual">
+			<div className="orig-individual">
 				<span>Original</span>
 				{Object.values(Tiers).map((tier) => {
 					const coins = generateIndividual({ ...baseSettings, [tier]: REPITITIONS }, originalIndividualTable);
@@ -59,7 +60,7 @@ function LootByCR({ ...otherProps }: BaseProps) {
 						</div>
 					);
 				})}
-			</div> */}
+			</div>
 			<div className="hoard-coins">
 				<span>Hoard</span>
 				{Object.values(Tiers).map((tier) => {
@@ -83,10 +84,10 @@ function LootByCR({ ...otherProps }: BaseProps) {
 					);
 				})}
 			</div>
-			{/* <div className="orig-hoard-coins">
+			<div className="orig-hoard-coins">
 				<span>Original Hoard</span>
 				{Object.values(Tiers).map((tier) => {
-					const { coins } = generateHoardLoot({ ...baseSettings, [tier]: REPITITIONS }, originalHoardTable,[]);
+					const { coins } = generateHoardLoot({ ...baseSettings, [tier]: REPITITIONS }, originalHoardTable, []);
 					return (
 						<div key={tier}>
 							<span>{tier}: </span>
@@ -105,13 +106,9 @@ function LootByCR({ ...otherProps }: BaseProps) {
 						</div>
 					);
 				})}
-			</div> */}
+			</div>
 		</div>
 	);
-}
-
-function toGold(coins: [number, number, number, number, number]) {
-	return coins[0] / 100 + coins[1] / 10 + coins[2] / 2 + coins[3] + coins[4] * 10;
 }
 
 export default styled(LootByCR)`
