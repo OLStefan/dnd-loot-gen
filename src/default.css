@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+@font-face {
+	font-family: 'icomoon';
+	src: url('assets/icomoon.ttf?3en6il') format('truetype');
+}
+
+:root {
+	height: 100%;
+
+	--error-color: hsl(349, 80%, 35%);
+	--hint-color: hsl(109, 80%, 35%);
+
+	--spacing-small: 4px;
+	--spacing-medium: 8px;
+	--spacing-large: 16px;
+
+	--short-animation-duration: 100ms;
+	--animation-duration: 250ms;
+	--long-animation-duration: 500ms;
+
+	--textfield-default-size: 1.5em;
+
+	--border-radius: 8px;
+
+	--title-bar-font-size: 2rem;
+	--menu-font-size: 1.5rem;
+	--card-title-font-size: 1.5rem;
+	--card-expand-font-size: 1.5rem;
+
+	--card-content-text-size: 1.25em;
+
+	--font-weight-bold: 700;
+
+	--character-editor-card-min-width: 40ch;
+
+	--menu-min-width: 20ch;
+	--menu-divider-height: 0.1em;
+
+	--burger-button-size: 1.25em;
+
+	--card-shadow-error: 0 0 4px 2px var(--error-color);
+
+	--details-row-size: 4em;
+	--details-textfield-min: 10ch;
+	--details-textfield-max: 25ch;
+	--details-portrait-max: 200px;
+}
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	user-select: none;
+	height: 100%;
+	width: 100%;
+}
+
+#root {
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Dark Mode colors*/
+.dark {
+	--background: hsl(220, 13%, 18%);
+	--primary-color: hsl(201, 57%, 45%);
+	--primary-color-tint: hsl(203, 70%, 52%);
+	--primary-color-shade: hsl(199, 57%, 30%);
+
+	--backgound-logo-color: hsl(0, 0%, 50%);
+
+	--text-on-background: hsl(0, 0%, 100%);
+	--text-on-primary: var(--text-on-background);
+	--text-disabled: hsl(0, 0%, 66%);
+
+	--card-shadow: 0 0 4px 2px hsla(0, 0%, 100%, 0.2);
+}
+
+/* Bright Mode colors*/
+.bright {
+	--background: hsl(0, 0%, 100%);
+	--primary-color: hsl(201, 67%, 44%);
+	--primary-color-tint: hsl(203, 70%, 52%);
+	--primary-color-shade: hsl(199, 57%, 30%);
+
+	--backgound-logo-color: hsl(0, 0%, 50%);
+
+	--text-on-background: hsl(220, 13%, 18%);
+	--text-on-primary: hsl(0, 0%, 100%);
+	--text-disabled: hsl(0, 0%, 66%);
+
+	--card-shadow: 0 0 4px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+div:focus,
+span:focus {
+	outline: none;
+}
