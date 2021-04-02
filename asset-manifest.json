@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/dnd-loot-gen-react/static/css/main.5bc5b1ce.chunk.css",
-    "main.js": "/dnd-loot-gen-react/static/js/main.7aa346c4.chunk.js",
-    "main.js.map": "/dnd-loot-gen-react/static/js/main.7aa346c4.chunk.js.map",
-    "runtime-main.js": "/dnd-loot-gen-react/static/js/runtime-main.e02dd2ec.js",
-    "runtime-main.js.map": "/dnd-loot-gen-react/static/js/runtime-main.e02dd2ec.js.map",
-    "static/css/2.27175f2b.chunk.css": "/dnd-loot-gen-react/static/css/2.27175f2b.chunk.css",
-    "static/js/2.e15335aa.chunk.js": "/dnd-loot-gen-react/static/js/2.e15335aa.chunk.js",
-    "static/js/2.e15335aa.chunk.js.map": "/dnd-loot-gen-react/static/js/2.e15335aa.chunk.js.map",
-    "index.html": "/dnd-loot-gen-react/index.html",
-    "static/css/2.27175f2b.chunk.css.map": "/dnd-loot-gen-react/static/css/2.27175f2b.chunk.css.map",
-    "static/css/main.5bc5b1ce.chunk.css.map": "/dnd-loot-gen-react/static/css/main.5bc5b1ce.chunk.css.map",
-    "static/js/2.e15335aa.chunk.js.LICENSE.txt": "/dnd-loot-gen-react/static/js/2.e15335aa.chunk.js.LICENSE.txt"
+    "main.css": "/dnd-loot-gen/static/css/main.5bc5b1ce.chunk.css",
+    "main.js": "/dnd-loot-gen/static/js/main.7aa346c4.chunk.js",
+    "main.js.map": "/dnd-loot-gen/static/js/main.7aa346c4.chunk.js.map",
+    "runtime-main.js": "/dnd-loot-gen/static/js/runtime-main.c54ec005.js",
+    "runtime-main.js.map": "/dnd-loot-gen/static/js/runtime-main.c54ec005.js.map",
+    "static/css/2.27175f2b.chunk.css": "/dnd-loot-gen/static/css/2.27175f2b.chunk.css",
+    "static/js/2.57e5a3fa.chunk.js": "/dnd-loot-gen/static/js/2.57e5a3fa.chunk.js",
+    "static/js/2.57e5a3fa.chunk.js.map": "/dnd-loot-gen/static/js/2.57e5a3fa.chunk.js.map",
+    "index.html": "/dnd-loot-gen/index.html",
+    "static/css/2.27175f2b.chunk.css.map": "/dnd-loot-gen/static/css/2.27175f2b.chunk.css.map",
+    "static/css/main.5bc5b1ce.chunk.css.map": "/dnd-loot-gen/static/css/main.5bc5b1ce.chunk.css.map",
+    "static/js/2.57e5a3fa.chunk.js.LICENSE.txt": "/dnd-loot-gen/static/js/2.57e5a3fa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e02dd2ec.js",
+    "static/js/runtime-main.c54ec005.js",
     "static/css/2.27175f2b.chunk.css",
-    "static/js/2.e15335aa.chunk.js",
+    "static/js/2.57e5a3fa.chunk.js",
     "static/css/main.5bc5b1ce.chunk.css",
     "static/js/main.7aa346c4.chunk.js"
   ]
